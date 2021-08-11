@@ -9,13 +9,9 @@ const Backcard = () => {
         <h1>Do you know if your Bitrhday is lucky?</h1>
       </header>
       <Giphy searchTerm={"bday"} />
-
-      <button>
-        {" "}
-        <Link to="/bdayluck" className="link">
-          Click Here to find it out!
-        </Link>
-      </button>
+      <Link to="/bdayluck" className="link">
+        <button> Click Here to find it out!</button>
+      </Link>
     </div>
   );
 };
