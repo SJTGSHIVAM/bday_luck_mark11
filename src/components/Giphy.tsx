@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import happy from "../gif/happy.webp";
-import sad from "../gif/hbday.webp";
-import hbd from "../gif/sad.webp";
+import hbd from "../gif/hbday.webp";
+import sad from "../gif/sad.webp";
 
 const Giphy = ({ searchTerm }: { searchTerm: string }) => {
   const [error, setError] = useState(true);
