@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-// import happy from "../gif/happy.webp";
-// import sad from "../gif/hbday.webp";
-// import hbd from "../gif/sad.webp";
+import happy from "../gif/happy.webp";
+import sad from "../gif/hbday.webp";
+import hbd from "../gif/sad.webp";
 
 const Giphy = ({ searchTerm }: { searchTerm: string }) => {
   const [error, setError] = useState(true);
@@ -14,7 +14,7 @@ const Giphy = ({ searchTerm }: { searchTerm: string }) => {
   useEffect(() => {
     axios
       .get(
-        `https://api.giphy.com/v1/gifs/translate?s=${searchTerm}&api_key=V6AU97qCSCYVmbIC5UDppEiVM1xnuO9E&weirdness=1`
+        `https://aaapi.giphy.com/v1/gifs/translate?s=${searchTerm}&api_key=V6AU97qCSCYVmbIC5UDppEiVM1xnuO9E&weirdness=1`
       )
       .then((data) => {
         // console.log("t1");
@@ -28,9 +28,10 @@ const Giphy = ({ searchTerm }: { searchTerm: string }) => {
       .catch((data) => {
         // console.log(data);
 
-        if (searchTerm == "bday") setImgUrl("../gif/bday.webp");
-        else if (searchTerm == "sad") setImgUrl("../gif/sad.webp");
-        else setImgUrl("../gif/happy.webp");
+        if (searchTerm == "bday") setImgUrl(String(hbd));
+        else if (searchTerm == "sad") setImgUrl(String(sad));
+        else if (searchTerm == "happy") setImgUrl(String(happy));
+        else setImgUrl("random");
       });
   }, []);
   return (
