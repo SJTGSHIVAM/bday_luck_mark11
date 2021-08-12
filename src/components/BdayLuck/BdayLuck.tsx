@@ -8,6 +8,7 @@ const BdayLuck = () => {
   const [isLucky, setIsLucky] = useState(true);
   const [valLuckyNumber, setValLuckyNumber] = useState(true);
   const [valBDate, setValBDate] = useState(true);
+  const [answerAvailible, setAnswerAvailible] = useState(false);
 
   const invalidateNumber = (e: number): boolean => isNaN(e) || e < 1;
   const invalidateBDate = (e: string): boolean => isNaN(Date.parse(e));
@@ -35,7 +36,8 @@ const BdayLuck = () => {
       return;
     }
     setIsLucky(luckLogic(bDate));
-    console.log(luckLogic(bDate));
+    setAnswerAvailible(true);
+    // console.log(luckLogic(bDate));
     // console.log(luckyNumber);
     // console.log(valBDate);
   };
@@ -57,7 +59,7 @@ const BdayLuck = () => {
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
     const luckyNum = parseFloat(event.target.value);
-
+    setAnswerAvailible(false);
     if (invalidateNumber(luckyNum)) {
       setValLuckyNumber(false);
       setLuckyNumber(luckyNum);
@@ -76,7 +78,13 @@ const BdayLuck = () => {
         <section className="instruction">Enter your birth date</section>
         <label>
           <section className="label"> Birth Date</section>
-          <input type="date" onBlur={onDateChange} />
+          <input
+            type="date"
+            onFocus={() => {
+              setAnswerAvailible(false);
+            }}
+            onBlur={onDateChange}
+          />
         </label>
 
         {!valBDate && (
@@ -94,17 +102,20 @@ const BdayLuck = () => {
           <div>Please enter a positive Number greater than one</div>
         )}
         <button onClick={checkLuck}>CHECK</button>
-        {!isLucky ? (
-          <section>
-            <span>Hard luck! Your Birthday is not forming a lucky number.</span>
-            <Giphy searchTerm={"sad"} key={"sad"} />
-          </section>
-        ) : (
-          <section>
-            <span>Hurray! Your Birthday is forming a lucky number.</span>
-            <Giphy searchTerm={"happy"} key={"happy"} />
-          </section>
-        )}
+        {answerAvailible &&
+          (!isLucky ? (
+            <section>
+              <span>
+                Hard luck! Your Birthday is not forming a lucky number.
+              </span>
+              <Giphy searchTerm={"sad"} key={"sad"} />
+            </section>
+          ) : (
+            <section>
+              <span>Hurray! Your Birthday is forming a lucky number.</span>
+              <Giphy searchTerm={"happy"} key={"happy"} />
+            </section>
+          ))}
       </div>
     </>
   );
