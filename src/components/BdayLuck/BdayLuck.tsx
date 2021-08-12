@@ -12,21 +12,32 @@ const BdayLuck = () => {
   const invalidateNumber = (e: number): boolean => isNaN(e) || e < 1;
   const invalidateBDate = (e: string): boolean => isNaN(Date.parse(e));
 
+  const luckLogic = (bday: string) => {
+    const bdayLen = bday.length;
+    let sum = 0;
+    for (let i = 0; i < bdayLen; i++)
+      if (!isNaN(parseInt(bday[i]))) sum = sum + parseInt(bday[i]);
+    return sum % luckyNumber === 0;
+  };
+
   const checkLuck = () => {
     if (invalidateNumber(luckyNumber) && invalidateBDate(bDate)) {
       setValBDate(false);
       setValLuckyNumber(false);
+      return;
     }
     if (invalidateBDate(bDate)) {
       setValBDate(false);
+      return;
     }
     if (invalidateNumber(luckyNumber)) {
       setValLuckyNumber(false);
+      return;
     }
-
-    console.log(bDate);
+    setIsLucky(luckLogic(bDate));
+    console.log(luckLogic(bDate));
     // console.log(luckyNumber);
-    console.log(valBDate);
+    // console.log(valBDate);
   };
 
   const onDateChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -83,15 +94,15 @@ const BdayLuck = () => {
           <div>Please enter a positive Number greater than one</div>
         )}
         <button onClick={checkLuck}>CHECK</button>
-        {isLucky ? (
+        {!isLucky ? (
           <section>
             <span>Hard luck! Your Birthday is not forming a lucky number.</span>
-            <Giphy searchTerm={"sad"} />
+            <Giphy searchTerm={"sad"} key={"sad"} />
           </section>
         ) : (
           <section>
             <span>Hurray! Your Birthday is forming a lucky number.</span>
-            <Giphy searchTerm={"happy"} />
+            <Giphy searchTerm={"happy"} key={"happy"} />
           </section>
         )}
       </div>
