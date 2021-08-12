@@ -3,20 +3,58 @@ import Giphy from "../Giphy";
 import PrivacyNotice from "../PrivacyNotice";
 import "./BdayLuck.css";
 const BdayLuck = () => {
-  const [billAmount, setBillAmount] = useState<number>(0);
+  const [luckyNumber, setLuckyNumber] = useState<number>(NaN);
+  const [bDate, setBDate] = useState<string>("");
   const [isLucky, setIsLucky] = useState(true);
+  const [valLuckyNumber, setValLuckyNumber] = useState(true);
+  const [valBDate, setValBDate] = useState(true);
 
-  const validateAmount = (e: number): boolean => isNaN(e) || e < 1;
+  const invalidateNumber = (e: number): boolean => isNaN(e) || e < 1;
+  const invalidateBDate = (e: string): boolean => isNaN(Date.parse(e));
 
-  const onBillAmountChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
-    const billAmt = parseFloat(event.target.value);
+  const checkLuck = () => {
+    if (invalidateNumber(luckyNumber) && invalidateBDate(bDate)) {
+      setValBDate(false);
+      setValLuckyNumber(false);
+    }
+    if (invalidateBDate(bDate)) {
+      setValBDate(false);
+    }
+    if (invalidateNumber(luckyNumber)) {
+      setValLuckyNumber(false);
+    }
 
-    if (validateAmount(billAmt)) {
-      setBillAmount(billAmt);
+    console.log(bDate);
+    // console.log(luckyNumber);
+    console.log(valBDate);
+  };
+
+  const onDateChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const bday = String(event.target.value);
+    console.log(bday);
+    if (invalidateBDate(bday)) {
+      setValBDate(false);
+      setBDate(bday);
+
       return;
     }
+    setValBDate(true);
+    setBDate(bday);
+  };
+
+  const onLuckyNumberChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    const luckyNum = parseFloat(event.target.value);
+
+    if (invalidateNumber(luckyNum)) {
+      setValLuckyNumber(false);
+      setLuckyNumber(luckyNum);
+
+      return;
+    }
+    setValLuckyNumber(true);
+    setLuckyNumber(luckyNum);
   };
   return (
     <>
@@ -27,21 +65,35 @@ const BdayLuck = () => {
         <section className="instruction">Enter your birth date</section>
         <label>
           <section className="label"> Birth Date</section>
-          <input type="date" onChange={() => {}} />
+          <input type="date" onBlur={onDateChange} />
         </label>
+
+        {!valBDate && (
+          <div>Make sure to fill a valid date and then click the button.</div>
+        )}
         <label>
-          <section className="label"> Bill Amount:</section>
+          <section className="label"> Lucky Number:</section>
           <input
             type="number"
-            value={billAmount}
-            onChange={onBillAmountChange}
+            value={luckyNumber}
+            onChange={onLuckyNumberChange}
           />
         </label>
-        <button>CHECK</button>
-        <section>
-          <span>Hard luck! Your Birthday is not forming a lucky number.</span>
-          <Giphy searchTerm={"sad"} />
-        </section>
+        {!valLuckyNumber && (
+          <div>Please enter a positive Number greater than one</div>
+        )}
+        <button onClick={checkLuck}>CHECK</button>
+        {isLucky ? (
+          <section>
+            <span>Hard luck! Your Birthday is not forming a lucky number.</span>
+            <Giphy searchTerm={"sad"} />
+          </section>
+        ) : (
+          <section>
+            <span>Hurray! Your Birthday is forming a lucky number.</span>
+            <Giphy searchTerm={"happy"} />
+          </section>
+        )}
       </div>
     </>
   );
