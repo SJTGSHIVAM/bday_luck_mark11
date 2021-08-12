@@ -14,7 +14,7 @@ const Giphy = ({ searchTerm }: { searchTerm: string }) => {
   useEffect(() => {
     axios
       .get(
-        `https://aaapi.giphy.com/v1/gifs/translate?s=${searchTerm}&api_key=V6AU97qCSCYVmbIC5UDppEiVM1xnuO9E&weirdness=1`
+        `https://api.giphy.com/v1/gifs/translate?s=${searchTerm}&api_key=V6AU97qCSCYVmbIC5UDppEiVM1xnuO9E&weirdness=1`
       )
       .then((data) => {
         // console.log("t1");
