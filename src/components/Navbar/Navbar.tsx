@@ -56,7 +56,7 @@ function Navbar() {
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
-           { click? <FaTimes />:<FaBars />;}
+            {click ? <FaTimes /> : <FaBars />}
           </div>
         </div>
       </nav>
