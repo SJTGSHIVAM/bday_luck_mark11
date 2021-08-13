@@ -5,7 +5,6 @@ import hbd from "../gif/hbday.webp";
 import sad from "../gif/sad.webp";
 
 const Giphy = ({ searchTerm }: { searchTerm: string }) => {
-  const [error, setError] = useState(true);
   const [imgUrl, setImgUrl] = useState("");
 
   // this is random key on internet V6AU97qCSCYVmbIC5UDppEiVM1xnuO9E
@@ -22,7 +21,7 @@ const Giphy = ({ searchTerm }: { searchTerm: string }) => {
         setImgUrl(data.data.data.images.fixed_height.url);
         // console.log("t1.5");
         console.log(imgUrl);
-        setError(true);
+
         // console.log("t2");
       })
       .catch((data) => {
@@ -31,20 +30,13 @@ const Giphy = ({ searchTerm }: { searchTerm: string }) => {
         if (searchTerm == "bday") setImgUrl(String(hbd));
         else if (searchTerm == "sad") setImgUrl(String(sad));
         else if (searchTerm == "happy") setImgUrl(String(happy));
-        else setImgUrl("random");
+        else setImgUrl(String(hbd));
       });
   }, []);
   return (
-    <>
-      <div className="gif">
-        {console.log(imgUrl + "ddd")}
-        {error ? (
-          <img alt="Gif" src={imgUrl} />
-        ) : (
-          <img alt="Gif" src={imgUrl} />
-        )}
-      </div>
-    </>
+    <div className="gif">
+      <img src={imgUrl} key={imgUrl} />
+    </div>
   );
 };
 
