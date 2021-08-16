@@ -1,0 +1,44 @@
+.footerLink {
+  color: #ff0077;
+  display: inline;
+  margin: 1rem;
+  /* padding: 1em; */
+}
+
+.footerLink a {
+  color: black;
+}
+
+.ul {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.footer {
+  border-color: #ff0077;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.icon {
+  color: #ff0077;
+  font-size: 1.2rem;
+}
+
+.legacyText {
+  text-align: center;
+  bottom: 0;
+}
+
+/* .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        max-width: 1500px;
+        vertical-align: baseline;} */

@@ -36,4 +36,5 @@ body {
   line-height: 1.5;
   color: var(--color-black);
   background: var(--color-white);
+  margin-bottom: 0;
 }

@@ -70,14 +70,14 @@ const BdayLuck = () => {
     setLuckyNumber(luckyNum);
   };
   return (
-    <>
+    <div className="mid-cover">
       <PrivacyNotice />
 
-      <div className="bcard">
-        <header className="head">Input Bday</header>
+      <div className="bdaycard">
+        <header className="head"> Input Bday </header>
         <section className="instruction">Enter your birth date</section>
         <label>
-          <section className="label"> Birth Date</section>
+          <section className="label"> Birth Date:</section>
           <input
             type="date"
             onFocus={() => {
@@ -88,7 +88,9 @@ const BdayLuck = () => {
         </label>
 
         {!valBDate && (
-          <div>Make sure to fill a valid date and then click the button.</div>
+          <div className="msg">
+            Make sure to fill a valid date and then click the button.
+          </div>
         )}
         <label>
           <section className="label"> Lucky Number:</section>
@@ -99,25 +101,31 @@ const BdayLuck = () => {
           />
         </label>
         {!valLuckyNumber && (
-          <div>Please enter a positive Number greater than one</div>
+          <div className="msg">
+            Please enter a positive Number greater than one
+          </div>
         )}
-        <button onClick={checkLuck}>CHECK</button>
+        <button className="clickbtn" onClick={checkLuck}>
+          CHECK
+        </button>
         {answerAvailible &&
           (!isLucky ? (
             <section>
-              <span>
+              <span className="msg">
                 Hard luck! Your Birthday is not forming a lucky number.
               </span>
               <Giphy searchTerm={"sad"} key={"sad"} />
             </section>
           ) : (
             <section>
-              <span>Hurray! Your Birthday is forming a lucky number.</span>
+              <span className="msg">
+                Hurray! Your Birthday is forming a lucky number.
+              </span>
               <Giphy searchTerm={"happy"} key={"happy"} />
             </section>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 export default BdayLuck;

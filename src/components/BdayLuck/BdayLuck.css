@@ -1,14 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
 * {
   box-sizing: border-box;
 }
-.bcard {
-  background-color: #f8f9fa;
-  margin: 30px auto;
-  border-radius: 10px;
-  padding: 0 0 20px 0;
-  -webkit-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
-  -moz-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
-  box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
+.head {
+  color: #1caeb1;
+  font-family: Poppins;
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0.2rem;
+}
+
+.instruction {
+  color: #ff0077;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.label {
+  font-family: Poppins;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.bdaycard {
+  background-image: url(./gifts.svg);
+  background-size: 12rem 10rem;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-color: #ffd4e8;
+  display: flex;
+  margin: 1rem 1rem 2rem 1rem;
+  flex-direction: column;
+  padding: 10rem;
+  font-size: 1.5rem;
+  height: 100%;
+  align-items: center;
 }
 .smallcard {
   background-color: #f8f9fa;
@@ -18,4 +48,34 @@
   -webkit-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
   -moz-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
   box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
+}
+
+.msg {
+  font-size: medium;
+  font-weight: bold;
+  color: #1caeb1;
+}
+
+.gif {
+  align-items: center;
+  text-align: center;
+}
+.mid-cover {
+  margin-top: auto;
+  padding: auto;
+}
+@media screen and (max-width: 500px) {
+  .bdaycard {
+    background-size: 8rem 6rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    font-size: 1rem;
+  }
+  .head {
+    margin: 1rem;
+  }
+  .gif {
+    height: 30vh;
+    width: 80vw;
+  }
 }

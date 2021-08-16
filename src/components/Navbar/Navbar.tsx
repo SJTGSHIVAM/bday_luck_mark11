@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaTimes, FaBars } from "react-icons/fa";
 import "./Navbar.css";
+
 {
   /*
   use this in html
@@ -56,7 +56,7 @@ function Navbar() {
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
         </div>
       </nav>

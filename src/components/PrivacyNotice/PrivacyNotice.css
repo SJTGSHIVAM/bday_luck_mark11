@@ -8,3 +8,11 @@
 .crossbox {
   background-color: beige;
 }
+.notice {
+  font-size: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .notice {
+    font-size: 0.7rem;
+  }
+}

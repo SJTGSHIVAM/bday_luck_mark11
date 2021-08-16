@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./PrivacyNotice.css";
 import { BsInfoCircleFill, BsInfoCircle } from "react-icons/bs";
 const PrivacyNotice = () => {
   const [privacyNoticeVisible, setPrivacyNoticeVisible] = useState(false);
@@ -17,7 +17,9 @@ const PrivacyNotice = () => {
           <span>
             <BsInfoCircle />
           </span>
-          <span>Privacy Notice! We are not storing your data.</span>
+          <span className="notice">
+            Privacy Notice! We are not storing your data.
+          </span>
           <span
             className="crossbox"
             onClick={() => {

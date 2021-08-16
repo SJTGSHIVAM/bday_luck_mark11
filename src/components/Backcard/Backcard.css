@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -5,21 +10,42 @@ a {
   text-decoration: none;
   color: black;
 }
-.bcard {
-  background-color: #f8f9fa;
-  margin: 30px auto;
+
+h1 {
+  color: #1caeb1;
+  font-family: Poppins;
+}
+
+.backcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  background-color: #ffd4e8;
+  margin: 1rem 1rem 2rem 1rem;
+}
+
+.clickbtn {
+  color: #ff0077;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: medium;
+  margin: 0rem 1rem 1rem 1rem;
   border-radius: 10px;
-  padding: 0 0 20px 0;
+  border-color: #1caeb1;
+  padding: 0.2rem;
+  margin: 1rem;
   -webkit-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
   -moz-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
   box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
 }
-.smallcard {
-  background-color: #f8f9fa;
-  margin: 1rem 1rem 1rem 1rem;
-  border-radius: 10px;
-  padding: 0.5rem;
-  -webkit-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
-  -moz-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
-  box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
+
+.gif {
+  align-items: center;
+  margin: 0.7rem;
+}
+
+@media screen and (max-width: 500px) {
 }

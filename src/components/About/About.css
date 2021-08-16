@@ -1,12 +1,15 @@
 * {
   box-sizing: border-box;
 }
+
 .bcard {
-  background-color: #f8f9fa;
-  margin: 30px auto;
-  border-radius: 10px;
-  padding: 0 0 20px 0;
-  -webkit-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
-  -moz-box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
-  box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
+  background-image: url(../BdayLuck/gifts.svg);
+  background-size: 12rem 10rem;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-color: #ffd4e8;
+  margin: 1rem 1rem 2rem 1rem;
+  padding: 2rem;
+  padding-bottom: 8rem;
 }
