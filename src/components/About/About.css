@@ -9,7 +9,20 @@
   background-position-x: right;
   background-position-y: bottom;
   background-color: #ffd4e8;
+  display: flex;
   margin: 1rem 1rem 2rem 1rem;
-  padding: 2rem;
-  padding-bottom: 8rem;
+  flex-direction: column;
+  padding: 10rem;
+  font-size: 1.5rem;
+  height: 100%;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .bcard {
+    background-size: 8rem 6rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    font-size: 1rem;
+  }
 }

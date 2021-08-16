@@ -17,14 +17,18 @@ h1 {
 }
 
 .backcard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem;
-
+  background-size: 12rem 10rem;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
   background-color: #ffd4e8;
+  display: flex;
   margin: 1rem 1rem 2rem 1rem;
+  flex-direction: column;
+  padding: 10rem;
+  font-size: 1.5rem;
+  height: 100%;
+  align-items: center;
 }
 
 .clickbtn {
@@ -48,4 +52,10 @@ h1 {
 }
 
 @media screen and (max-width: 500px) {
+  .backcard {
+    background-size: 8rem 6rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    font-size: 1rem;
+  }
 }
