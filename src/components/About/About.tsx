@@ -6,19 +6,36 @@ const About = () => {
   return (
     <div className="bcard">
       <header className="head">
-        <h2>Is your Bday lucky?</h2>
+        <h1>Is your Bday lucky?</h1>
       </header>
       <section className="about">
-        This is a simple app create using Typescript and ReactJS Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Beatae iste expedita
-        debitis perspiciatis! Quos, expedita numquam. Delectus, corporis natus
-        similique facere at minima, officia eum dolore tenetur est maxime quam
-        voluptates! Laborum itaque amet quod vero odit ea voluptates officia vel
-        voluptatem, fugiat ratione rem nihil labore odio nobis deleniti iste
-        facilis nam repudiandae. Facilis quod dolore ab deleniti, debitis esse
-        repudiandae obcaecati adipisci suscipit excepturi, nesciunt architecto
-        delectus voluptatum ipsa itaque explicabo ullam quae sapiente quam,
-        inventore reprehenderit ea?
+        <h2 id="description">Description</h2>
+        <p>
+          This is a web app that checks if your birth date is lucky for you or
+          not. Built using ReactJS.{" "}
+        </p>
+        <h2 id="live-link">Github Link</h2>
+        <p>
+          <a href="https://github.com/SJTGSHIVAM/bday_luck_mark11">
+            https://github.com/SJTGSHIVAM/bday_luck_mark11
+          </a>
+        </p>
+        <h2 id="salient-features-are">Salient features are</h2>
+        <ul>
+          <li>Built using ReactJS</li>
+          <li>An input field to take the user&#39;s complete birth date</li>
+          <li>An input field for the user&#39;s to enter their lucky number</li>
+          <li>
+            App calculates if the sum of digits of birthdate is divisible by the
+            lucky number.
+          </li>
+          <li>
+            Show the output if the birthdate is lucky or not to the user
+            depending on the calculated results.
+          </li>
+          <li>Privacy notice shown to user</li>
+          <li>Giphy Api used to show Gif according to result</li>
+        </ul>
       </section>
     </div>
   );

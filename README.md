@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web app that checks if your birth date is lucky for you or not. Built using ReactJS.
+
+# Live Link
+
+https://checkyourbdayluck.netlify.app/
+
+# Salient features are
+
+- Built using ReactJS
+- An input field to take the user's complete birth date
+- An input field for the user's to enter their lucky number
+- App calculates if the sum of digits of birthdate is divisible by the lucky number.
+- Show the output if the birthdate is lucky or not to the user depending on the calculated results.
+- Privacy notice shown to user
+- Giphy Api used to show Gif according to result
 
 ## Available Scripts
 
