@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="bcard">
       <header className="head">
-        <h1>Is your Bday lucky?</h1>
+        <h1>About</h1>
       </header>
       <section className="about">
         <h2 id="description">Description</h2>
@@ -17,11 +17,11 @@ const About = () => {
         <h2 id="live-link">Github Link</h2>
         <p>
           <a href="https://github.com/SJTGSHIVAM/bday_luck_mark11">
-            https://github.com/SJTGSHIVAM/bday_luck_mark11
+            Click here
           </a>
         </p>
         <h2 id="salient-features-are">Salient features are</h2>
-        <ul>
+        <ol>
           <li>Built using ReactJS</li>
           <li>An input field to take the user&#39;s complete birth date</li>
           <li>An input field for the user&#39;s to enter their lucky number</li>
@@ -35,7 +35,7 @@ const About = () => {
           </li>
           <li>Privacy notice shown to user</li>
           <li>Giphy Api used to show Gif according to result</li>
-        </ul>
+        </ol>
       </section>
     </div>
   );
